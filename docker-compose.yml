@@ -47,7 +47,7 @@ services:
       - POSTGRES_PASSWORD=Athish@123
       - POSTGRES_DB=dryz
     ports:
-      - "5433:5432"
+      - "5432:5432"
     networks:
       - mynetwork
 networks:

@@ -12,6 +12,8 @@ COPY requirements.txt .
 # Upgrade pip to the latest version
 RUN pip install --upgrade pip
 
+RUN apt-get update && apt-get install -y postgresql-client
+
 # Install dependencies
 RUN pip install -r requirements.txt
 

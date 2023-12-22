@@ -8,6 +8,8 @@ services:
       context: .
     ports:
       - "8000:8000"
+    networks:
+      - mynetwork
 
   nginx:
     build: ./nginx
@@ -17,7 +19,11 @@ services:
       - "8080:80"
     depends_on:
       - django_gunicorn
+    networks:
+      - mynetwork
+    # Add health check or wait-for logic here to ensure Django is ready
 
+  # Uncomment the following section if you plan to use the djangoapp service
   # djangoapp:
   #   container_name: djangoapp
   #   build: .
@@ -37,11 +43,15 @@ services:
     image: postgres:12
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres123
+      - POSTGRES_PASSWORD=dryz12345
       - POSTGRES_DB=dryz
     ports:
-      - "5433:5432"
+      - "5432:5432"
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
   
 volumes:
-  static: {}  # Corrected volume declaration
-  # pgdata: {}
+  static: {}

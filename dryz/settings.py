@@ -91,17 +91,17 @@ DATABASES = {
 
  'default': {
 
-     'ENGINE': os.environ.get('DB_DRIVER', 'django.db.backends.postgresql'),
+     'ENGINE':'django.db.backends.postgresql',
 
-     'NAME': os.environ.get('PG_DB','dryz'),
+     'NAME': 'dryz',
 
-     'USER': os.environ.get('PG_USER','postgres'),
+     'USER': 'postgres',
 
-     'PASSWORD': os.environ.get('PG_PASSWORD','postgres123'),
+     'PASSWORD': 'dryz12345',
 
-     'HOST': 'database-1.ctwgqm2c4qap.eu-north-1.rds.amazonaws.com',
+     'HOST': 'dryz.ctwgqm2c4qap.eu-north-1.rds.amazonaws.com',
 
-     'PORT': os.environ.get('PG_PORT','5432'),
+     'PORT': '5432',
 
         }
 }

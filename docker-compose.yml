@@ -44,10 +44,10 @@ services:
     image: postgres:12
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=Athish@123
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=dryz
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - mynetwork
 networks:

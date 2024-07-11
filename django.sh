@@ -15,7 +15,7 @@ echo "=========================="
 # Start Gunicorn
 gunicorn -b 0.0.0.0:8000 dryz.wsgi:application --timeout 300
 
-
+# use only development 
 # echo "start server"
 # python3 manage.py runserver 0.0.0.0:8000
 # echo "=========================="
